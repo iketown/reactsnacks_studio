@@ -32,6 +32,11 @@ export default {
       },
     },
     {
+      name: "snackImage",
+      title: "Snack Image",
+      type: "image",
+    },
+    {
       name: "categories",
       title: "Categories",
       type: "array",
