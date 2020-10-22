@@ -39,6 +39,12 @@ export default {
       type: "string",
     },
     {
+      name: "initialpath",
+      title: "Initial Path",
+      description: "starting path (url) defaults to /",
+      type: "string",
+    },
+    {
       name: "previewwindow",
       title: "Preview Window",
       description: "console, tests or browser",

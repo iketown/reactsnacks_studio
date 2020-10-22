@@ -63,6 +63,11 @@ export default {
       title: "Body",
       type: "blockContent",
     },
+    {
+      name: "finalText",
+      title: "Final Text",
+      type: "string",
+    },
   ],
 
   preview: {

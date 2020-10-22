@@ -41,7 +41,15 @@ export default {
           { title: "Underline", value: "underline" },
           { title: "Strike", value: "strike-through" },
           { title: "Code", value: "code" },
-          { title: "CodeBlock", value: "codeBlock" },
+          { title: "Final", value: "final" },
+          {
+            title: "Cleared",
+            value: "cleared",
+            blockEditor: {
+              icon: () => "C",
+              render: () => <div style={{ fontSize: 10 }}>[cleared]</div>,
+            },
+          },
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
@@ -96,12 +104,6 @@ export default {
             ],
           },
           {
-            name: "targetCode",
-            type: "object",
-            title: "Target",
-            fields: [{ title: "targetId", name: "targetId", type: "string" }],
-          },
-          {
             title: "URL",
             name: "link",
             type: "object",
@@ -119,9 +121,34 @@ export default {
     // You can add additional types here. Note that you can't use
     // primitive types such as 'string' and 'number' in the same array
     // as a block type.
+    // {
+    //   type: "image",
+    //   options: { hotspot: true },
+    // },
     {
-      type: "image",
-      options: { hotspot: true },
+      name: "inlineImage",
+      type: "object",
+      title: "Inline Image",
+      fields: [
+        {
+          type: "image",
+          name: "image",
+          title: "Image",
+          options: { hotspot: true },
+        },
+        {
+          type: "string",
+          name: "float",
+          title: "Float",
+          description: "center, left or right",
+        },
+        {
+          type: "number",
+          name: "height",
+          title: "Height",
+          description: "height in px",
+        },
+      ],
     },
     { type: "codeSandbox" },
     {
